@@ -12,7 +12,7 @@
 - Email: phukhuu39@gmail.com
 - Link repository: https://github.com/kminhphu/K5-L2B-DAY05-KhuuMinhPhu-2A202603337-MOTTracking
 - Giờ bắt đầu: 17h ngày 13/11/2026
-- Giờ kết thúc: 19h30 ngày 13/11/2026
+- Giờ kết thúc: 22h ngày 13/11/2026
 
 ## 1. Xem trước đoạn video (CP0)
 
