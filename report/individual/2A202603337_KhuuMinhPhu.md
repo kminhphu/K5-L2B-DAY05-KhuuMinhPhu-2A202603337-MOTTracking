@@ -21,7 +21,7 @@ Ghi **trước khi vẽ**, mỗi người một dòng.
 | Mã | Frame xuất hiện | Frame cuối thấy được | Rẽ / dừng / đổi tốc độ ở frame | Bị che ở frame | Ghi chú |
 |---|---|---|---|---|---|
 | P1 |0 |149 |Dừng ở frame 52 |30-55 | |
-| P2 |60 |149 |Không có | Không có|60-80 |
+| P2 |60 |149 |Không có | 60-80 ||
 | P3 |0 |149 |Không có |Không có | |
 | P4 |0 |109 |Dừng ở frame 20 |90 | |
 | P5 |0 |139 |Đổi tốc độ ở frame 48  |0-40 và 110 | |
