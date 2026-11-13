@@ -6,13 +6,13 @@
 
 ## 0. Thông tin học viên
 
-- Họ tên:
-- MSSV:
-- Mã đề (A/B/C):
-- Email:
-- Link repository:
-- Giờ bắt đầu:
-- Giờ kết thúc:
+- Họ tên: Khưu Minh Phú
+- MSSV: 2A202603337
+- Mã đề (A/B/C): C
+- Email: phukhuu39@gmail.com
+- Link repository: https://github.com/kminhphu/K5-L2B-DAY05-KhuuMinhPhu-2A202603337-MOTTracking
+- Giờ bắt đầu: 17h ngày 13/11/2026
+- Giờ kết thúc: 19h30 ngày 13/11/2026
 
 ## 1. Xem trước đoạn video (CP0)
 
@@ -20,11 +20,11 @@ Ghi **trước khi vẽ**, mỗi người một dòng.
 
 | Mã | Frame xuất hiện | Frame cuối thấy được | Rẽ / dừng / đổi tốc độ ở frame | Bị che ở frame | Ghi chú |
 |---|---|---|---|---|---|
-| P1 | | | | | |
-| P2 | | | | | |
-| P3 | | | | | |
-| P4 | | | | | |
-| P5 | | | | | |
+| P1 |0 |149 |Dừng ở frame 52 |30-55 | |
+| P2 |60 |149 |Không có | Không có|60-80 |
+| P3 |0 |149 |Không có |Không có | |
+| P4 |0 |109 |Dừng ở frame 20 |90 | |
+| P5 |0 |139 |Đổi tốc độ ở frame 48  |0-40 và 110 | |
 
 ## 2. Keyframe và thời gian (CP1, CP4)
 
@@ -32,7 +32,7 @@ Số keyframe lấy từ kết quả `src/check_submission.py`.
 
 | Mã | Số keyframe | Keyframe ở frame | Số frame có mặt | Keyframe / 100 frame | Thời gian (phút) | Chỗ khó |
 |---|---|---|---|---|---|---|
-| P1 | | | | | | |
+| P1 | 21| 0, 10, 20, 30, 46, 50, 54, 55, 56, 58, 60, 65, 75, 85, 95, 105, 115, 125, 135, 145, 149 | 143 |14.7 | 25 | Đoạn bị che và che mất hoàn toàn |
 | P2 | | | | | | |
 | P3 | | | | | | |
 | P4 | | | | | | |
@@ -94,16 +94,49 @@ Lỗi nào chỉ lượt 2 (theo cảnh) mới thấy, lượt 1 (theo người)
 
 | Kiểm tra | Kết quả |
 |---|---|
-| Tên file MOT 1.1 | |
-| Tên file CVAT for video 1.1 | |
-| Số track ID khác nhau trong `gt/gt.txt` (phải là 5) | |
+| Tên file MOT 1.1 |KhuuMinhPhu_mot.zip |
+| Tên file CVAT for video 1.1 |KhuuMinhPhu_cvat_video.zip |
+| Số track ID khác nhau trong `gt/gt.txt` (phải là 5) |5 |
 | Frame `outside` không có dòng trong `gt.txt` (đúng / sai) | |
 | Job đã completed trên CVAT máy cá nhân | |
 
 Dán phần tóm tắt in ra từ `src/check_submission.py`:
 
 ```text
-...
+Số frame in theo CVAT (bắt đầu từ 0). Trong gt.txt, frame_id = frame CVAT + 1.
+
+=== File MOT 1.1: KhuuMinhPhu_mot.zip ===
+  Số track ID: 5   |   Tổng số box: 623
+  [OK]        Đúng 5 track ID.
+
+  Track | Frame có mặt | Số frame | Đoạn vắng (outside)
+      1 |   0–149      |      143 | 39–45
+      2 |   0–149      |      150 | -
+      3 |   0–109      |      110 | -
+      4 |   0–139      |      130 | 120–129
+      5 |  60–149      |       90 | -
+
+
+=== File CVAT for video 1.1: KhuuMinhPhu_cvat_video.zip ===
+
+  Track | Nhãn   | Frame thấy | Keyframe | KF/100 frame | Frame occluded | Lần bật outside
+      0 | person |        143 |       21 |         14.7 |             18 |               1
+              Track 0: keyframe ở frame [0, 10, 20, 30, 46, 50, 54, 55, 56, 58, 60, 65, 75, 85, 95, 105, 115, 125, 135, 145, 149]
+      1 | person |         90 |       10 |         11.1 |             20 |               0
+              Track 1: keyframe ở frame [60, 70, 80, 90, 100, 110, 120, 130, 140, 149]
+      2 | person |        150 |       16 |         10.7 |             70 |               0
+              Track 2: keyframe ở frame [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 149]
+      3 | person |        110 |        9 |          8.2 |             20 |               1
+              Track 3: keyframe ở frame [0, 10, 20, 30, 40, 50, 80, 90, 100]
+      4 | person |        130 |       13 |         10.0 |             60 |               2
+              Track 4: keyframe ở frame [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 130]
+
+  Tổng: 69 keyframe / 623 frame có mặt = 11.1 keyframe / 100 frame
+  [OK]        Đọc được 5 track từ annotations.xml.
+
+=== Tóm tắt ===
+  Lỗi: 0   |   Cảnh báo: 0
+  Đạt. Dán phần tóm tắt này vào báo cáo mục 5.
 ```
 
 ## 6. Ba câu kết
@@ -114,7 +147,7 @@ Dán phần tóm tắt in ra từ `src/check_submission.py`:
 
 2. Có chỗ nào bạn không chắc "cùng ID hay ID mới"? Bạn đã quyết định và ghi chú thế nào?
 
-   ...
+   Không có chỗ nào không chắc "cùng ID hay ID mới"
 
 3. Một lỗi ID trong job của bạn (nếu không còn sót, chọn lỗi đã sửa) có thể làm xe tự lái dự đoán sai chuyển động của người đó như thế nào? Lỗi đó ảnh hưởng MOTA hay IDF1 nhiều hơn?
 
